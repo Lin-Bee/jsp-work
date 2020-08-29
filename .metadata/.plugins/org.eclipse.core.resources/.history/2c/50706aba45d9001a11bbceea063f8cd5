@@ -1,9 +1,0 @@
-package com.cos;
-
-public class RandomNumber {
-
-	public static int getNum() {
-		
-	}
-	
-}

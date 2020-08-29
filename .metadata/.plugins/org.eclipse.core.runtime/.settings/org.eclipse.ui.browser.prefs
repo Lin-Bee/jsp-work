@@ -1,3 +1,4 @@
+browser-choice=1
 browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="0">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n</web-browsers>
 eclipse.preferences.version=1
-internalWebBrowserHistory=http\://localhost\:8080/cos/main.jsp|*|http\://localhost\:8080/cos/login.jsp|*|http\://localhost\:8080/cos/join.jsp|*|http\://localhost\:8080/cos/loginProc.jsp|*|http\://localhost\:8080/cos/index.jsp|*|http\://localhost\:8080/cos/home.html|*|192.168.0.106\:8080/cos/home.html|*|http\://localhost\:8080/cos/|*|
+internalWebBrowserHistory=http\://localhost\:8080/|*|http\://localhost\:8080/servlet-study/|*|http\://localhost\:8080/cos/|*|http\://localhost\:8080/cos/main.jsp|*|http\://localhost\:8080/cos/login.jsp|*|http\://localhost\:8080/cos/join.jsp|*|http\://localhost\:8080/cos/loginProc.jsp|*|http\://localhost\:8080/cos/index.jsp|*|http\://localhost\:8080/cos/home.html|*|192.168.0.106\:8080/cos/home.html|*|
