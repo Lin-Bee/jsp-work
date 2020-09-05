@@ -3168,3 +3168,51 @@ java.lang.InterruptedException
 
 !ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 15:16:28.799
 !MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 15:44:04.600
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 15:44:04.605
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 15:44:33.716
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 15:44:33.722
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-05 15:44:44.847
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.eBsVOneD
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-05 15:44:44.852
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.eBsVOneD
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-05 15:44:44.856
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-05 15:44:44.862
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.eBsVOneD => OK
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:15:34.484
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:15:34.490
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:15:40.661
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:15:40.667
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:19:17.370
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:19:17.376
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:19:28.297
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-05 16:19:28.303
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
