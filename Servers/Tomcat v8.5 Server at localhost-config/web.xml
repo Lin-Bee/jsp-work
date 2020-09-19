@@ -4645,7 +4645,7 @@
 	
 	<filter-mapping>
 		<filter-name>CharEncFilter</filter-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
 </web-app>
