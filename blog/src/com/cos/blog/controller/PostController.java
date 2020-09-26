@@ -9,6 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cos.blog.config.action.Action;
+import com.cos.blog.config.action.post.PostDetailAction;
+import com.cos.blog.config.action.post.PostListAction;
+import com.cos.blog.config.action.post.PostSaveFormAction;
+import com.cos.blog.config.action.post.PostSaveProcAction;
+import com.cos.blog.config.action.user.UserJoinFormAction;
+import com.cos.blog.config.action.user.UserJoinProcAction;
+import com.cos.blog.config.action.user.UserLoginFormAction;
+import com.cos.blog.config.action.user.UserLoginProcAction;
+import com.cos.blog.config.action.user.UserLogoutProcAction;
+import com.cos.blog.config.action.user.UserUpdateFormAction;
+import com.cos.blog.config.action.user.UserUpdateProcAction;
 import com.cos.blog.model.Post;
 
 //http://localhost:8080/blog/            .do
@@ -25,9 +37,30 @@ public class PostController extends HttpServlet {
 	void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("/post요청됨");
 		String cmd = request.getParameter("cmd");
-		if(cmd.equals("list")) {
-			response.sendRedirect("/post/list.jsp");
-		}
+		System.out.println("cmd :" + cmd);
+		
+		Action action=route(cmd);
+		if(action !=null) action.excute(request, response);
+	}
+
+	private Action route(String cmd) {
+		if (cmd.equals("list")) {
+			return new PostListAction();
+			
+		}else if (cmd.equals("saveForm")) {
+			// 로그인페이지도 redirect
+			return new PostSaveFormAction();
+
+		}  else if (cmd.equals("saveProc")) {
+			// 로그인페이지도 redirect
+			return new PostSaveProcAction();
+ 
+		}  else if (cmd.equals("detail")) {
+			// 로그인페이지도 redirect
+			return new PostDetailAction();
+	
+		} 
+		return null;
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,5 +72,6 @@ public class PostController extends HttpServlet {
 			throws ServletException, IOException {
 		process(request, response);
 	}
+
 
 }

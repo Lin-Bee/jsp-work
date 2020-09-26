@@ -23,6 +23,14 @@ public class Post {
 		this.createDate = createDate;
 		this.userId = userId;
 	}
+	
+	public Post(String title, String content, int readCount,  int userId) {
+		this.title = title;
+		this.content = content;
+		this.readCount = readCount;
+		this.userId = userId;
+	}
+
 
 	public int getId() {
 		return id;
