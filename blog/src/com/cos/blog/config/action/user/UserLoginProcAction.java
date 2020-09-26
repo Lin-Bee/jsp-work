@@ -1,4 +1,4 @@
-package com.cos.blog.config.action;
+package com.cos.blog.config.action.user;
 
 import java.io.IOException;
 
@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.cos.blog.config.action.Action;
 import com.cos.blog.dao.UserDao;
 import com.cos.blog.model.User;
 
@@ -27,6 +28,9 @@ public class UserLoginProcAction implements Action{
 					HttpSession session = request.getSession();
 					session.setAttribute("principal", userEntity);
 					System.out.println("로그인 성공");
+					response.sendRedirect("/index.jsp");
+				}else {
+					System.out.println("로그인 실패");
 					response.sendRedirect("/index.jsp");
 				}
 				//3.index페이지로 이동 redirect

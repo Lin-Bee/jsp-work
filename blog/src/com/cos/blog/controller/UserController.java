@@ -9,10 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.config.action.Action;
-import com.cos.blog.config.action.UserJoinProcAction;
-import com.cos.blog.config.action.UserLoginFormAction;
-import com.cos.blog.config.action.UserLoginProcAction;
-import com.cos.blog.config.action.UserLogoutProcAction;
+import com.cos.blog.config.action.user.UserJoinFormAction;
+import com.cos.blog.config.action.user.UserJoinProcAction;
+import com.cos.blog.config.action.user.UserLoginFormAction;
+import com.cos.blog.config.action.user.UserLoginProcAction;
+import com.cos.blog.config.action.user.UserLogoutProcAction;
+import com.cos.blog.config.action.user.UserUpdateFormAction;
+import com.cos.blog.config.action.user.UserUpdateProcAction;
 
 //http://localhost:8080/blog/            .do
 //모든 .do요청은 FrontController를 탄다
@@ -38,14 +41,15 @@ public class UserController extends HttpServlet {
 		if (cmd.equals("joinForm")) {
 			// 회원가입이면 회원가입페이지 redirect
 			//response.sendRedirect("/user/joinForm.jsp");
-
+			return new UserJoinFormAction();
+			
 		} else if (cmd.equals("loginForm")) {
 			// 로그인페이지도 redirect
-			
 			return new UserLoginFormAction();
 
 		} else if (cmd.equals("updateForm")) {
 			// 회원수정페이지 model > Dispatcher
+			return new UserUpdateFormAction();
 
 		} else if (cmd.equals("joinProc")) {
 			return new UserJoinProcAction();
@@ -54,8 +58,7 @@ public class UserController extends HttpServlet {
 			return new UserLoginProcAction();
 
 		} else if (cmd.equals("updateProc")) {
-			// 1.로그인 진행(select)Model로 이동
-			// 2.index페이지로 이동 redirect
+			return new UserUpdateProcAction();
 
 		} else if (cmd.equals("logout")) {
 			return new UserLogoutProcAction();
