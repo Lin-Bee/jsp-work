@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.config.action.Action;
-import com.cos.blog.dao.UserDao;
-import com.cos.blog.model.User;
+import com.cos.blog.dao.PostDao;
+import com.cos.blog.model.Post;
 
 public class PostSaveFormAction implements Action {
 

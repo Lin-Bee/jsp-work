@@ -30,14 +30,13 @@ public class PostSaveProcAction implements Action {
 			
 		//공백확인
 		Post post = new Post(title, content, 0, userId);
-		
-		
+			
 		//값 검증	
 		PostDao postDao = new PostDao();
 		postDao.글쓰기(post);
 		
 		//list로 돌아가기
-		response.sendRedirect("/post/list.jsp");
+		response.sendRedirect("/");
 		
 	}
 	

@@ -9,9 +9,34 @@ import java.util.List;
 
 import com.cos.blog.config.DBConn;
 import com.cos.blog.model.Post;
-import com.cos.blog.model.User;
 
 public class PostDao {
+	
+	public int 삭제하기(int id) {
+		String sql="DELETE FROM post WHERE id=?";
+		Connection conn= DBConn.getInstance();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,id);
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int 조회수증가(int id) {
+		String sql="UPDATE post Set readCount = readCount+1 WHERE id=?";
+		Connection conn= DBConn.getInstance();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,id);
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 	
 public List<Post> 글목록() {
 		List<Post> posts = new ArrayList<>();
@@ -57,4 +82,48 @@ public List<Post> 글목록() {
 		}
 		return -1;
 	}
+	
+	public int 수정하기(Post post) {
+		String sql="UPDATE FROM post(title, content, readCount,userId, createDate)WHERE id=?";
+		Connection conn= DBConn.getInstance();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, post.getTitle());
+			pstmt.setString(2, post.getContent());
+			pstmt.setInt(3, post.getReadCount());
+			pstmt.setInt(4, post.getUserId());			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public Post 글내용(int id) {
+		String sql = "SELECT * FROM post WHERE id=? ";
+		
+		Connection conn= DBConn.getInstance();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+			pstmt.setInt(1, id);
+			ResultSet rs=pstmt.executeQuery();
+			
+			if (rs.next()) {
+				Post post = new Post(
+						rs.getInt("id"), 
+						rs.getString("title"),
+						rs.getString("content"),
+						rs.getInt("readCount"),
+						rs.getTimestamp("createDate"),
+						rs.getInt("userId")
+				);			
+				return post;
+			}					
+		} catch (Exception e) {
+			e.printStackTrace();
+			}
+		return null;
+	}
+	
+	
 }

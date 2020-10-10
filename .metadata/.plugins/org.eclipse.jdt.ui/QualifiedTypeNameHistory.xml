@@ -36,12 +36,16 @@
 <fullyQualifiedTypeName name="com.cos.blog.config.action.post.PostListAction"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.cos.blog.config.action.post.PostDetailAction"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="com.cos.blog.dao.PostDao"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.Request"/>
-<fullyQualifiedTypeName name="com.cos.blog.model.Post"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.mysql.cj.xdevapi.Result"/>
+<fullyQualifiedTypeName name="com.cos.blog.config.action.post.PostDeleteProcAction"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.cos.blog.config.action.post.PostUpdateFormAction"/>
+<fullyQualifiedTypeName name="com.cos.blog.dao.PostDao"/>
+<fullyQualifiedTypeName name="com.cos.blog.model.Post"/>
 </qualifiedTypeNameHistroy>
