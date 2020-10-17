@@ -25,8 +25,8 @@
 
 			<div class="form-group">
 				<label for="address">address:</label> 
-				<button type="button" class="btn btn-warning float-right">주소검색</button>
-				<input type="text" class="form-control" placeholder="Enter address" name="address"/>
+				<button type="button"  onClick="goPopup();" value="팝업_domainChk" class="btn btn-warning float-right" >주소검색</button>
+				<input type="text" class="form-control" placeholder="Enter address"  id="address"  name="address" readonly/>
 			</div>
 			
 			<!-- form 안에 있으면 자동으로 submit됨 -->
@@ -35,5 +35,13 @@
 	</div>
 	<br />
 </section>
-
+<script>
+	function goPopup(){
+		var pop = window.open("/juso/jusoPopup.jsp","pop","width=400,height=420, scrollbars=yes, resizable=yes"); 
+	}
+	
+	function jusoCallBack(roadFullAddr){
+		document.querySelector("#address").value=roadFullAddr;
+	}
+</script>
 <%@ include file="../layout/footer.jsp"%>

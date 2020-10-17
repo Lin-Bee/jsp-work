@@ -6,7 +6,7 @@
 	<c:if test= "${sessionScope.principal.id == post.userId}">
 		<br /> <br />
 		
-		<a href="/post?cmd=UpdateForm(${post.id})" class="btn btn-warning">수정</a>
+		<a href="/post?cmd=updateForm&id=${post.id}" class="btn btn-warning">수정</a>
 		<button onclick="postDelete(${post.id})" class="btn btn-danger">삭제</button>
 	</c:if>
 	<br /> <br />

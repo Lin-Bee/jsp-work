@@ -15,6 +15,7 @@ import com.cos.blog.config.action.post.PostListAction;
 import com.cos.blog.config.action.post.PostSaveFormAction;
 import com.cos.blog.config.action.post.PostSaveProcAction;
 import com.cos.blog.config.action.post.PostUpdateFormAction;
+import com.cos.blog.config.action.post.PostUpdateProcAction;
 
 //http://localhost:8080/blog/            .do
 //모든 .do요청은 FrontController를 탄다
@@ -59,7 +60,11 @@ public class PostController extends HttpServlet {
 		}  else if (cmd.equals("updateForm")) {
 			// 로그인페이지도 redirect
 			return new PostUpdateFormAction();
-		}
+		
+		}else if (cmd.equals("updateProc")) {
+		// 로그인페이지도 redirect
+		return new PostUpdateProcAction();
+	}
 		return null;
 	}
 

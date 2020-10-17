@@ -21,7 +21,7 @@ public class PostDetailAction implements Action {
 		//1.값이 null 인지 아이디값 받기
 		int id = Integer.parseInt(request.getParameter("id"));
 		
-		PostDao postDao = new PostDao();
+		PostDao postDao = PostDao.getIntance();
 		//추가 : 조회수 증가
 		int result = postDao.조회수증가(id);				
 		//2번 DAO 연결해서 Post postyEntity = 상세보기(id) 함수호출

@@ -10,6 +10,13 @@ import com.cos.blog.model.User;
 
 public class UserDao {
 	
+	private static UserDao instance = new UserDao();
+	public static UserDao getIntance() {
+		return instance;
+	}
+	
+	private UserDao() {}
+	
 	public User 로그인(User user) {
 		//패스워드 세션에 저장하면 불법임 패스워드는 저장하지 않는다
 		String sql="SELECT id,username,email,address FROM users WHERE username = ? AND password=?";
@@ -21,12 +28,13 @@ public class UserDao {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				User userEntity = new User(
-					rs.getInt("id"),
-					rs.getString("username"),
-					rs.getString("email"),
-					rs.getString("address")
-				);
+				User userEntity = User.builder()
+					.id(rs.getInt("id"))
+					.username(rs.getString("username"))
+					.email(rs.getString("email"))
+					.address(rs.getString("address"))
+					.build();
+				
 				return userEntity;
 			};
 			

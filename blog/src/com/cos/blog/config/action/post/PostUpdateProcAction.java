@@ -2,6 +2,7 @@ package com.cos.blog.config.action.post;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,23 +21,29 @@ public class PostUpdateProcAction implements Action {
 		//1.세션확인
 		HttpSession session = request.getSession();
 		if(session.getAttribute("principal")==null) return;
-		
-		int userId = Integer.parseInt(request.getParameter("userId"));
-		
+			
+		//공백확인
+	
+		//값 검증	
+		int id = Integer.parseInt(request.getParameter("id"));
 		String title = request.getParameter("title");
 		title = title.replace("<","&lt;");
 		title = title.replace(">","&rt;");
 		String content = request.getParameter("content");
+				
+		Post post =Post.builder()
+				.id(id)
+				.title(title)
+				.content(content)
+				.build();		
 			
-		//공백확인
-		Post post = new Post(title, content, 0, userId);
-			
-		//값 검증	
-		PostDao postDao = new PostDao();
+		PostDao postDao = PostDao.getIntance();
 		postDao.수정하기(post);
 		
-		//list로 돌아가기
-		response.sendRedirect("/");
+		System.out.println("수정온료");
+		
+		response.sendRedirect("index.jsp");
+		
 		
 	}
 	

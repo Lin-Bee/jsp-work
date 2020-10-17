@@ -10,18 +10,18 @@
 	
 			<form action="/user?cmd=loginProc" method="post">
 				<div class="form-group">
-					<label for="username">username</label>
-					 <input type="text" class="form-control" placeholder="Enter username" name="username"/>
+					<label for="username">user name</label>
+					 <input type="text" class="form-control" placeholder="Enter username" name="username"  value="${cookie.remember.value}"/>
 				</div>
 	
 				<div class="form-group">
 					<label for="password">Password:</label>
-					 <input type="password" class="form-control" placeholder="Enter password" name="password"/>
+					 <input type="password" class="form-control" placeholder="Enter password" name="password" />
 				</div>
 	
 				<div class="form-group form-check">
 					<label class="form-check-label"> 
-					<input class="form-check-input" type="checkbox"> Remember me
+					<input class="form-check-input" type="checkbox" name="remember"> Remember me
 					</label>
 				</div>
 				

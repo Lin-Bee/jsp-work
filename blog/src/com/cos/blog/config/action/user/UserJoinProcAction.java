@@ -15,14 +15,14 @@ public class UserJoinProcAction implements Action {
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//1.회원가입 진행(insert)Model로 이동
-				User user = new User(
-					request.getParameter("username"),
-					request.getParameter("password"),
-					request.getParameter("email"),
-					request.getParameter("address")
-				);
+				User user = User.builder()
+					.username(request.getParameter("username"))
+					.password(request.getParameter("password"))
+					.email(request.getParameter("email"))
+					.address(request.getParameter("address"))
+					.build();
 				
-				UserDao userDao = new UserDao();
+				UserDao userDao = UserDao.getIntance();
 				userDao.회원가입(user);
 				
 				//2.로그인페이지로 이동 redirect

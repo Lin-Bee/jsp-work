@@ -13,6 +13,8 @@ import com.cos.blog.dao.UserDao;
 import com.cos.blog.model.Post;
 import com.cos.blog.model.User;
 
+import lombok.Builder;
+
 public class PostSaveProcAction implements Action {
 
 	@Override
@@ -29,10 +31,15 @@ public class PostSaveProcAction implements Action {
 		String content = request.getParameter("content");
 			
 		//공백확인
-		Post post = new Post(title, content, 0, userId);
+		Post post = Post.builder()
+				.title(title)
+				.content(content)
+				.readCount(0)
+				.userId(userId)
+				.build();
 			
 		//값 검증	
-		PostDao postDao = new PostDao();
+		PostDao postDao = PostDao.getIntance();
 		postDao.글쓰기(post);
 		
 		//list로 돌아가기
